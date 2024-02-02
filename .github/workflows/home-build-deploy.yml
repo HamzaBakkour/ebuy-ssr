@@ -16,7 +16,7 @@ jobs:
             matrix:
                 include:
                     - dockerfile: "./apps/home/Dockerfile"
-                    - image: hamzabakkour/ebuy-home
+                    - image: hamzabakkour/ebuy-home:latest
                     - k8sManifestPath: "./apps/home/k8s/"
         permissions:
             contents: read
@@ -42,7 +42,7 @@ jobs:
             - name: Build and push micro app docker image
               uses: docker/build-push-action@v4
               with:
-                context: "./apps/home/"
+                context: "."
                 file: ${{ matrix.dockerfile }}
                 push: true
                 tags: ${{ steps.meta.outputs.tags }}
