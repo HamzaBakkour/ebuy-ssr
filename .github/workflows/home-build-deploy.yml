@@ -15,8 +15,8 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                    - dockerfile: "./apps/home/Dockerfile"
-                    - image: hamzabakkour/ebuy-home:latest
+                    - dockerfile: "apps/home/Dockerfile"
+                    - image: hamzabakkour/ebuy-home
                     - k8sManifestPath: "./apps/home/k8s/"
         permissions:
             contents: read
