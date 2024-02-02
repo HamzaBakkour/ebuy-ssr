@@ -1,5 +1,7 @@
 import { Table, Image, Container } from "semantic-ui-react";
 
+//dasdasd
+
 export function ShoppingBasket(basketListData: any) {
   const { basketList } = basketListData;
   return (

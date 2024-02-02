@@ -3,6 +3,8 @@ import { Button, Card, Image } from "semantic-ui-react";
 export function ProductCard(productData: any) {
   const { product } = productData;
 
+//asdasd
+
   return (
     <Card>
       <Card.Content>
