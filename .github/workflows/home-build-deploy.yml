@@ -14,10 +14,8 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                include:
-                    - dockerfile: ./apps/home/Dockerfile
-                    - image: hamzabakkour/ebuy-home
-                    - k8sManifestPath: ./apps/home/k8s/
+                include: ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    - image: hamzabakkour/ebuy-home 
         permissions:
             contents: read
             packages: write
@@ -49,7 +47,7 @@ jobs:
               uses: docker/build-push-action@v4
               with:
                 context: "."
-                file: ${{ matrix.dockerfile }}
+                file: "./apps/home/Dockerfile" ##############################XXXXXXXXXXXX
                 push: true
                 tags: ${{ steps.meta.outputs.tags }}
 
@@ -82,7 +80,7 @@ jobs:
               with:
                 namespace: "default"
                 action: deploy
-                manifests: |
-                    ${{ matrix.k8sManifestPath }}
+                manifests: | ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    "./apps/home/k8s/"
                 images: |
                     ${{ steps.meta.outputs.tags }}
