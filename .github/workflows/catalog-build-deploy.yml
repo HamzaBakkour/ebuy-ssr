@@ -1,4 +1,4 @@
-name: home-build-deploy ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+name: catalog-build-deploy ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 on:
     # workflow_dispatch:
@@ -6,7 +6,7 @@ on:
         branches:
         - main
         paths: ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        - apps/home/**
+        - apps/catalog/**
 
 jobs:
     build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
             fail-fast: false
             matrix:
                 include: ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    - image: hamzabakkour/ebuy-home 
+                    - image: hamzabakkour/ebuy-catalog 
         permissions:
             contents: read
             packages: write
@@ -41,7 +41,7 @@ jobs:
               uses: docker/build-push-action@v4
               with:
                 context: "."
-                file: "./apps/home/Dockerfile" ##############################XXXXXXXXXXXX
+                file: "./apps/catalog/Dockerfile" ##############################XXXXXXXXXXXX
                 push: true
                 tags: ${{ steps.meta.outputs.tags }}
 
@@ -68,6 +68,6 @@ jobs:
                 namespace: "default"
                 action: deploy
                 manifests: | ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    ./apps/home/k8s
+                    ./apps/catalog/k8s
                 images: |
                     ${{ steps.meta.outputs.tags }}
