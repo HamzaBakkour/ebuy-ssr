@@ -82,6 +82,6 @@ jobs:
                 namespace: "default"
                 action: deploy
                 manifests: | ##############################XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    "./apps/home/k8s"
+                    ./apps/home/k8s
                 images: |
                     ${{ steps.meta.outputs.tags }}
