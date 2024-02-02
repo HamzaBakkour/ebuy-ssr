@@ -16,7 +16,7 @@ jobs:
             matrix:
                 include:
                     - dockerfile: "./apps/home/Dockerfile"
-                    - image: hamzabakkour/ebuy-ssr
+                    - image: hamzabakkour/ebuy-home
                     - k8sManifestPath: "./apps/home/k8s/"
         permissions:
             contents: read
