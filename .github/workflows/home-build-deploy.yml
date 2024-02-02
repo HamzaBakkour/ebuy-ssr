@@ -1,12 +1,12 @@
 name: home-build-deploy
 
 on:
-    workflow_dispatch:
-    # push:
-    #     branches:
-    #     - main
-    #     paths:
-    #     - apps/home/**
+    # workflow_dispatch:
+    push:
+        branches:
+        - main
+        paths:
+        - apps/home/**
 
 jobs:
     build-and-deploy:
