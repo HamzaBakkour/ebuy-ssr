@@ -5,7 +5,7 @@ export function Header() {
     <Menu fixed="top" inverted>
       <Container>
         <Menu.Item as="a" header>
-          eBuy.comxxdc
+          eBuy.comxxdcd
         </Menu.Item>
         <MenuItems />
         <Menu.Item position="right">
