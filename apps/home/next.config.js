@@ -4,7 +4,7 @@ const remotes = (isServer) => {
   const location = isServer ? "ssr" : "chunks";
 
   const ENV = process.env.ENV;
-
+//  d
   const CATALOG_URL_LOCAL = "http://localhost:3001";
   const CHECKOUT_URL_LOCAL = "http://localhost:3002";
 
