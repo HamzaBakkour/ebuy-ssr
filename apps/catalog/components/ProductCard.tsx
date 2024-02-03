@@ -3,7 +3,6 @@ import { Button, Card, Image } from "semantic-ui-react";
 export function ProductCard(productData: any) {
   const { product } = productData;
 
-//asdasdasdddd
 
   return (
     <Card>
